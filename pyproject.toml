@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc-to-md-cli"
+version = "0.1.0"
+description = "Convert PDF and DOCX files to Markdown from the command line."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "ADG81"},
+]
+keywords = ["markdown", "pdf", "docx", "converter", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "marker-pdf>=0.2.0",
+    "docling>=2.0.0",
+    "Pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+doc-to-md-cli = "doc_to_md_cli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ADG81/doc-to-md-cli"
+Repository = "https://github.com/ADG81/doc-to-md-cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
